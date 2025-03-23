@@ -99,7 +99,7 @@ const addToCart = async () => {
 
   // console.log(med);
   return (
-    <div size={5} sx={{ border: ` 1px solid ${theme.palette.text.secondary}`, borderRadius:'4px'}}>
+    <div size={5} sx={{ border: ` 1px solid #EEEEEE`, borderRadius:'4px'}}>
       <div justifyContent="center" alignItems='center'> <div component="img" src={`${med.img}`}/></div>
       <div direction='row' sx={{justifyContent: "space-between", alignItems: "center"}}>
         <div>{med.name}</div>
