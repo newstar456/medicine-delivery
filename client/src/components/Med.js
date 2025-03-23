@@ -65,8 +65,6 @@ import axios from "axios"
 
 const Med = ({med}) => {
   
-  const theme = useTheme();
-
   let startingQty = 1;
   const [quantity, setQuantity] = useState(startingQty)
   const qtyDecrease = () => {
