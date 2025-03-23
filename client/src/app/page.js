@@ -48,13 +48,13 @@ const Home = () => {
    let contentShops = data.map(med => med['Shops'].title)
    let constentShopsModified = new Set(contentShops);
    let newContentShops = [...constentShopsModified];
-   let contentShopsFinal = newContentShops.map(shop => <button variant='outlined' size="large" key={shop} data-name={shop} onClick={chooseShop}>{shop}</button>)
+   let contentShopsFinal = newContentShops.map(shop => <button className='uppercase border border-inherit px-4 py-2 rounded-sm mb-4' key={shop} data-name={shop} onClick={chooseShop}>{shop}</button>)
   
 
   return (
-    <div direction='row' spacing={{ xs:1, sm:2 }}>
+    <div className="flex flex-row pt-[125px]" >
       <ShopsList contentShops={contentShopsFinal}/>
-      <div className="grid ">{contentMeds}</div>
+      <div className="grid grid-cols-3 gap-x-6 gap-y-4 pl-[240px]">{contentMeds}</div>
     </div>
   )
 }

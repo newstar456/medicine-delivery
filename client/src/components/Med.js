@@ -1,67 +1,8 @@
 'use client'
 import React, {useState} from 'react'
-// import {Box, Typography, Stack, Grid2, Button} from '@mui/material'
-// import { useTheme } from '@mui/material/styles'
-// import styled from "styled-components"
-// import {Buffer} from "buffer" 
 import axios from "axios"
+import Image from 'next/image'
 
-// const MedBox = styled(Box) (function () {
-//   const theme = useTheme();
-//   return {
-//     color:`${theme.palette.text.secondary}`,
-//     textAlign:"start",
-//    [theme.breakpoints.up("mobile")]: {
-//       // paddingBottom:'16px',
-//       fontSize:'12px'
-//     },
-//     [theme.breakpoints.up("laptop")]: {
-//       // margin:'15px',
-//       fontSize:'16px'
-//     }
-//   }
-// })
-// const ImageBox = styled(Box) (function () {
-//   const theme = useTheme();
-//   return {
-//     [theme.breakpoints.up("mobile")]: {
-//       height:'90px',
-//       width:'auto',
-//     },
-//     [theme.breakpoints.up("laptop")]: {
-//       height:'120px',
-//       width:'auto',
-//     },
-//     [theme.breakpoints.up("desktop")]: {
-//       height:'150px',
-//       width:'auto',
-//     }
-//   }
-// })
-// const QtyButtons = styled(Button) (function () {
-//   const theme = useTheme();
-//   return {
-//       color:`${theme.palette.text.secondary}`,
-//       fontSize:'16px',
-//       '&:hover': {
-//           fontWeight: 'bold',
-//           backgroundColor: 'transparent',
-//       }
-//   }
-// })
-// const QtyStack = styled(Stack) (function () {
-//   const theme = useTheme();
-//   return {
-//     color:`${theme.palette.text.secondary}`,
-//     fontSize:'16px',
-//     [theme.breakpoints.up("phone")]: {
-//       display:'none'
-//     },
-//     [theme.breakpoints.up("tablet")]: {
-//       display:'block'
-//     },
-//   }
-// })
 
 const Med = ({med}) => {
   
@@ -97,20 +38,20 @@ const addToCart = async () => {
 };
 
 
-  // console.log(med);
+  console.log(med);
   return (
-    <div size={5} sx={{ border: ` 1px solid #EEEEEE`, borderRadius:'4px'}}>
-      <div justifyContent="center" alignItems='center'> <div component="img" src={`${med.img}`}/></div>
-      <div direction='row' sx={{justifyContent: "space-between", alignItems: "center"}}>
+    <div>
+      <Image src={med.img} width={500} height={250} alt="Picture of meds"/>
+      <div>
         <div>{med.name}</div>
-        <div direction='row' justifyContent='center' alignItems='center'>
+        <div >
           <div onClick={qtyDecrease}>{'<'}</div>
           <div sx={{fontStyle:`bold`}}>{quantity}</div>
           <div onClick={qtyIncrease}>{'>'}</div>
         </div>
         <div>{`price: ${med.price} грн`}</div>
       </div>
-      <div container spacing={0} justifyContent="right" alignItems='center'><button variant='outlined' onClick={addToCart}>add to Cart</button></div>
+      <div ><button variant='outlined' onClick={addToCart}>add to Cart</button></div>
       </div>
     
   )
