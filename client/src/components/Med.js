@@ -81,7 +81,7 @@ const addToCart = async () => {
   const medToAdd = {...med, quantity:quantity}
   try {
     const response = await axios.post(
-      "https://vercel-deployment-five-xi.vercel.app", 
+      "https://medicine-delivery-server.vercel.app", 
       medToAdd, 
       {
         headers: {

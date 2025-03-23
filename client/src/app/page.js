@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
       const fetchData = async () => {
           try {
-            await axios.get("https://vercel-deployment-five-xi.vercel.app")
+            await axios.get("https://medicine-delivery-server.vercel.app")
               .then((response) => {
                   const obj = JSON.parse(response.data)
                 setData(obj);
