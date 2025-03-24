@@ -35,7 +35,7 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'img.herohealth.com',
             port: '',
-            pathname: '/wp-blog/**',
+            pathname: '/blog/**',
             search: '',
           },
           {
