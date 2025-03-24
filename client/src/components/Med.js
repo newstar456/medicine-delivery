@@ -43,7 +43,7 @@ const addToCart = async () => {
     <div>
       {/* <Image src={`${med.img}`} width={500} height={250} alt="Picture of meds" className="rounded-t" sizes="100vw"  style={{ objectFit: 'cover' }}/> */}
         <Image 
-        src="https://npr.brightspotcdn.com/legacy/sites/wusf/files/201902/prescription_pills_opioids4_daylina_miller.jpg" 
+        src={med.img} 
         alt="Example Image"
         width={500} 
         height={300} 

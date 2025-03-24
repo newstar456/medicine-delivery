@@ -5,9 +5,9 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'images.pexels.com',
+            hostname: 'soracom.io',
             port: '',
-            pathname: '/photos/**',
+            pathname: '/wp-content//**',
             search: '',
           },
           {
@@ -15,6 +15,13 @@ const nextConfig = {
             hostname: 'npr.brightspotcdn.com',
             port: '',
             pathname: '/legacy/**',
+            search: '',
+          },
+                    {
+            protocol: 'https',
+            hostname: 'm.media-amazon.com',
+            port: '',
+            pathname: '/images/**',
             search: '',
           },
         ],
