@@ -26,7 +26,8 @@ const addToCart = async () => {
         withCredentials: true 
       }
     );
-    console.log(response.config.data);
+    // console.log(response.config.data);
+    console.log(response.data);
     return response.config.data;
   } catch (error) {
     console.error(error);
