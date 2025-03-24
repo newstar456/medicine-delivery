@@ -3,6 +3,7 @@ import React, { useState, useEffect, useMemo} from "react"
 import axios from "axios"
 import CartItem from "@/components/CartItem";
 
+
 const Cart = () => {
 
   const [data, setData] = useState([]);
