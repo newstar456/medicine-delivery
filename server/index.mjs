@@ -40,9 +40,9 @@ app.post('/', async (req, res) => {
     const itemExists = await data.find((item) => item.name === req.body.name&&item.shop===req.body.shop_id);
     // res.status(200).json(JSON.stringify(itemExists, null, 2));
     if(itemExists) {
-      // const newQty = Number(itemExists.quantity) + Number(req.body.quantity);
+      const newQty = Number(itemExists.quantity) + Number(req.body.quantity);
       // await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
-      res.status(200).json(JSON.stringify(itemExists, null, 2));
+      res.status(200).json(JSON.stringify({itemExists:itemExists, newQty:newQty}, null, 2));
     } else {
       res.status(200).json(JSON.stringify({1: 'item doesnt exist'}, null, 2));
       // const idInCart = `${Number(new Date().getTime())}`
