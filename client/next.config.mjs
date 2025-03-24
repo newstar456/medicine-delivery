@@ -7,7 +7,7 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'soracom.io',
             port: '',
-            pathname: '/wp-content//**',
+            pathname: '/wp-content/**',
             search: '',
           },
           {
@@ -17,11 +17,18 @@ const nextConfig = {
             pathname: '/legacy/**',
             search: '',
           },
-                    {
+          {
             protocol: 'https',
             hostname: 'm.media-amazon.com',
             port: '',
             pathname: '/images/**',
+            search: '',
+          },
+          {
+            protocol: 'https',
+            hostname: 'www.miriamstoppard.com',
+            port: '',
+            pathname: '/wp-content//**',
             search: '',
           },
         ],
@@ -29,3 +36,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
