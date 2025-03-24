@@ -41,7 +41,7 @@ const addToCart = async () => {
   console.log(med);
   return (
     <div>
-      <Image src={'https://images.pexels.com/photos/593451/pexels-photo-593451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} alt="Picture of meds" fill={true} className="rounded-t"          sizes="100vw" layout='fill' style={{ objectFit: 'cover' }}/>
+      <Image src={`${med.img}`} width={500} height={250} alt="Picture of meds" className="rounded-t" sizes="100vw"  style={{ objectFit: 'cover' }}/>
       <div>
         <div>{med.name}</div>
         <div >
