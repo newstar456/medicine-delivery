@@ -29,6 +29,7 @@ const Cart = () => {
 
   return (
     <div className='pt-[125px] p-10'>{contentCart}</div>
+    //////to add from + Submit
   )
 }
 

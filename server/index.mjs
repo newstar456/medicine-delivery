@@ -18,7 +18,9 @@ app.use(bodyParser.json());
 app.options('*', cors()); 
 
 import { createClient } from '@supabase/supabase-js'
-const supabase = createClient('https://eyxccahssmwxluobjzyb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5eGNjYWhzc213eGx1b2JqenliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0MTE3NDYsImV4cCI6MjA1Nzk4Nzc0Nn0.EyAezK8taMRdmnGdvmQFSI2wtbEhFqlsBjE8n4NQIu4')
+// const supabase = createClient('https://eyxccahssmwxluobjzyb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5eGNjYWhzc213eGx1b2JqenliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0MTE3NDYsImV4cCI6MjA1Nzk4Nzc0Nn0.EyAezK8taMRdmnGdvmQFSI2wtbEhFqlsBjE8n4NQIu4')
+
+const supabase = createClient('https://puawnzrjpeilfznskvfg.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB1YXduenJqcGVpbGZ6bnNrdmZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI4NTk2NTUsImV4cCI6MjA1ODQzNTY1NX0.P18q_jhL80zbvqziu7k8CQVKykp__R2_C3pWRr8ddMg')
 
 app.get('/', async (req, res) => {
   try {
