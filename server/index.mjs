@@ -38,7 +38,7 @@ app.post('/', async (req, res) => {
     const {data, error} = await supabase.from('Carts').select();
     // res.status(200).json(JSON.stringify({hello:'hello'}, null, 2));
     const itemExists = await data.filter((item) => item.name === req.body.name&&item.shop===req.body.shop_id);
-    res.status(200).json(JSON.stringify(itemExists, null, 2));
+    res.status(200).json(JSON.stringify(itemExists.length, null, 2));
     // if(itemExists.length > 0) {
     //   const newQty = Number(itemExists.quantity) + Number(req.body.quantity);
     //   await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
