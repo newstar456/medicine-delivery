@@ -10,6 +10,13 @@ const nextConfig = {
             pathname: '/photos/**',
             search: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'npr.brightspotcdn.com',
+            port: '',
+            pathname: '/legacy/**',
+            search: '',
+          },
         ],
     },
 };
