@@ -1,8 +1,7 @@
 'use client';
 import ShopsList from "@/components/ShopsList";
-import { useState, useEffect, useMemo} from "react"
+import React, { useState, useEffect, useMemo} from "react"
 import axios from "axios"
-import React from 'react'
 import Med from "@/components/Med";
 
 const Home = () => {
