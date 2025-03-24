@@ -45,7 +45,7 @@ const Home = () => {
     contentMeds = data.map(med => <Med med={med} key={med.id}/>)
   }
 
-  console.log(`${Number(new Date().getTime())}`)
+  // console.log(`${Number(new Date().getTime())}`)
 
    let contentShops = data.map(med => med['Shops'].title)
    let constentShopsModified = new Set(contentShops);

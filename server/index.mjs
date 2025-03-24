@@ -41,7 +41,7 @@ app.post('/', async (req, res) => {
     if(itemExists.length > 0) {
       const {quantity} = itemExists;
       const newQty = Number(quantity) + Number(req.body.quantity);
-      // await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
+      await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
       res.status(200).json(JSON.stringify(quantity, null, 2));
     } else {
       const idInCart = `${Number(new Date().getTime())}`
