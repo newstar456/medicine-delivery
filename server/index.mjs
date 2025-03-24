@@ -44,8 +44,8 @@ app.post('/', async (req, res) => {
       // await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
       res.status(200).json(JSON.stringify(quantity, null, 2));
     } else {
-      const idInCart = `${req.body.id}${new Date().getTime()}`
-      const newItem =  { id: idInCart, name: req.body.name, shop: req.body.shop_id, quantity:req.body.quantity, price: req.body.price};
+      const idInCart = `${Number(new Date().getTime())}`
+      const newItem =  { id:`${Number(new Date().getTime())}`, name:req.body.name, shop:req.body.shop_id, quantity:req.body.quantity, price:req.body.price};
       await supabase.from('Carts').insert({'id': `${req.body.id}`, 'name': `${req.body.name}`, 'shop':`${req.body.shop_id}`, 'quantity':`${req.body.quantity}`, 'price':`${req.body.price}`});
       res.status(200).json(JSON.stringify(newItem, null, 2));
     }

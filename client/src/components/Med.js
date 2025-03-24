@@ -30,34 +30,30 @@ const addToCart = async () => {
       }
     );
     // console.log(JSON.parse(response.config.data));
-    console.log(response.data);
-    return response.data;
+    console.log(response.config.data);
+    return response.config.data;
   } catch (error) {
     console.error(error);
   }
 };
 
 
-  console.log(med);
+  // console.log(med);
   return (
-    <div>
-      {/* <Image src={`${med.img}`} width={500} height={250} alt="Picture of meds" className="rounded-t" sizes="100vw"  style={{ objectFit: 'cover' }}/> */}
-        <Image 
-        src={med.img} 
-        alt="Example Image"
-        width={500} 
-        height={300} 
-      />
-      <div>
-        <div>{med.name}</div>
-        <div >
-          <div onClick={qtyDecrease}>{'<'}</div>
-          <div sx={{fontStyle:`bold`}}>{quantity}</div>
-          <div onClick={qtyIncrease}>{'>'}</div>
-        </div>
-        <div>{`price: ${med.price} грн`}</div>
+    <div className='p-10'>
+      <div className="relative h-80 w-100 bg-center">
+        <Image src={med.img} alt={med.name} fill={true} className="rounded-xl" sizes="fill" style={{ objectFit: 'cover' }} />
       </div>
-      <div ><button variant='outlined' onClick={addToCart}>add to Cart</button></div>
+      <div className='flex flex-row justify-evenly items-center pt-6'>
+        <div className='font-bold uppercase'>{med.name}</div>
+        <div className='flex flex-row justify-between items-center gap-1'>
+          <div onClick={qtyDecrease} className='w-6 cursor-pointer hover:font-bold'>{'<'}</div>
+          <div className='font-bold'>{quantity}</div>
+          <div onClick={qtyIncrease} className='w-6 text-right cursor-pointer hover:font-bold'>{'>'}</div>
+        </div>
+        <div>{`price: ${med.price} uah`}</div>
+      </div>
+      <div className='flex flex-row justify-end pt-6'><button variant='outlined' onClick={addToCart} className='text-sm uppercase border border-inherit px-3 py-1 rounded-sm hover:outline-1 hover:bg-[#333C45] cursor-pointer'>add to Cart</button></div>
       </div>
     
   )

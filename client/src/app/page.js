@@ -45,16 +45,18 @@ const Home = () => {
     contentMeds = data.map(med => <Med med={med} key={med.id}/>)
   }
 
+  console.log(`${Number(new Date().getTime())}`)
+
    let contentShops = data.map(med => med['Shops'].title)
    let constentShopsModified = new Set(contentShops);
    let newContentShops = [...constentShopsModified];
-   let contentShopsFinal = newContentShops.map(shop => <button className='uppercase border border-inherit px-4 py-2 rounded-sm mb-4' key={shop} data-name={shop} onClick={chooseShop}>{shop}</button>)
+   let contentShopsFinal = newContentShops.map(shop => <button className='cursor-pointer uppercase border border-inherit px-4 py-2 rounded-sm mb-4 hover:outline-1 hover:bg-[#333C45]' key={shop} data-name={shop} onClick={chooseShop}>{shop}</button>)
   
 
   return (
     <div className="flex flex-row pt-[125px]" >
       <ShopsList contentShops={contentShopsFinal}/>
-      <div className="grid grid-cols-3 gap-x-6 gap-y-4 pl-[240px]">{contentMeds}</div>
+      <div className="grid justify-evenly grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-x-6 gap-y-4 pl-[210px] lg:pl-[240px]">{contentMeds}</div>
     </div>
   )
 }
