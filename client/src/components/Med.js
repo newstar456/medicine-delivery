@@ -47,7 +47,10 @@ const addToCart = async () => {
         </div>
         <div>{`price: ${med.price} uah`}</div>
       </div>
-      <div className='flex flex-row justify-end pt-6'><button variant='outlined' onClick={addToCart} className='text-sm uppercase border border-inherit px-3 py-1 rounded-sm hover:outline-1 hover:bg-[#333C45] cursor-pointer'>add to Cart</button></div>
+      <div className='flex flex-row justify-between pt-6'>
+      <p>shop: {med['Shops'].name}</p>
+      <button variant='outlined' onClick={addToCart} className='text-sm uppercase border border-inherit px-3 py-1 rounded-sm hover:outline-1 hover:bg-[#333C45] cursor-pointer'>add to Cart</button>
+      </div>
       </div>
   )
 }
