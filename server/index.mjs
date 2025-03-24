@@ -41,13 +41,13 @@ app.post('/', async (req, res) => {
     // res.status(200).json(JSON.stringify(itemExists, null, 2));
     if(itemExists) {
       const newQty = Number(itemExists.quantity) + Number(req.body.quantity);
-      // await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
+      await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
       res.status(200).json(JSON.stringify({itemExists:itemExists, newQty:newQty}, null, 2));
     } else {
       res.status(200).json(JSON.stringify({1: 'item doesnt exist'}, null, 2));
-      // const idInCart = `${Number(new Date().getTime())}`
+      const idInCart = `${Number(new Date().getTime())}`
       // const newItem =  { id:`${Number(new Date().getTime())}`, name:req.body.name, shop:req.body.shop_id, quantity:req.body.quantity, price:req.body.price};
-      // await supabase.from('Carts').insert({'id': `${idInCart}`, 'name': `${req.body.name}`, 'shop':`${req.body.shop_id}`, 'quantity':`${req.body.quantity}`, 'price':`${req.body.price}`});
+      await supabase.from('Carts').insert({'id': `${idInCart}`, 'name': `${req.body.name}`, 'shop':`${req.body.shop_id}`, 'quantity':`${req.body.quantity}`, 'price':`${req.body.price}`});
       // res.status(200).json(JSON.stringify(idInCart, null, 2));
     }
   } catch (error) {
