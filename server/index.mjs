@@ -38,18 +38,18 @@ app.post('/', async (req, res) => {
     const {data, error} = await supabase.from('Carts').select();
     // res.status(200).json(JSON.stringify({hello:'hello'}, null, 2));
     const itemExists = await data.find((item) => item.name === req.body.name&&item.shop===req.body.shop_id);
-    res.status(200).json(JSON.stringify(itemExists, null, 2));
-    // if(itemExists.length !== 0) {
+    // res.status(200).json(JSON.stringify(itemExists, null, 2));
+    if(itemExists) {
       // const newQty = Number(itemExists.quantity) + Number(req.body.quantity);
       // await supabase.from('Carts').update({ 'quantity': `${newQty}` }).eq('id', `${itemExists.id}`);
-      // res.status(200).json(JSON.stringify(itemExists.length, null, 2));
-    // } else {
-      // res.status(200).json(JSON.stringify({1: 'item doesnt exist'}, null, 2));
+      res.status(200).json(JSON.stringify(itemExists, null, 2));
+    } else {
+      res.status(200).json(JSON.stringify({1: 'item doesnt exist'}, null, 2));
       // const idInCart = `${Number(new Date().getTime())}`
       // const newItem =  { id:`${Number(new Date().getTime())}`, name:req.body.name, shop:req.body.shop_id, quantity:req.body.quantity, price:req.body.price};
       // await supabase.from('Carts').insert({'id': `${idInCart}`, 'name': `${req.body.name}`, 'shop':`${req.body.shop_id}`, 'quantity':`${req.body.quantity}`, 'price':`${req.body.price}`});
       // res.status(200).json(JSON.stringify(idInCart, null, 2));
-    // }
+    }
   } catch (error) {
     console.error('Unable to connect to the database:', error);
     res.status(500).json({ error: 'Internal Server Error' });
