@@ -24,7 +24,7 @@ const Cart = () => {
 
   console.log(data);
 
-  const contentCart = data.map(med => <CartItem item={item} key={item.id}/>)
+  const contentCart = data.map(item => <CartItem item={item} key={item.id}/>)
 
   return (
     <div className='pt-[125px] p-10'>{contentCart}</div>

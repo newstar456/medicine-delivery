@@ -50,7 +50,7 @@ app.post('/', async (req, res) => {
 
 app.get('/cart', async (req, res) => {
   try {
-    const {data, error} = await supabase.from('Carts').select('id, name, shop, quantity, price');
+    const {data, error} = await supabase.from('Carts').select('id, name, shop, quantity, price, Meds(id,name, price, available_qty, shop_id, img, favorite)');
     res.status(200).json(JSON.stringify(data, null, 2));
   } catch (error) {
     console.error('Unable to connect to the database:', error);
