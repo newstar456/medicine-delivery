@@ -3,7 +3,6 @@ import React, {useState} from 'react'
 import axios from "axios"
 import Image from 'next/image'
 
-
 const Med = ({med}) => {
   
   let startingQty = 1;
@@ -13,8 +12,6 @@ const Med = ({med}) => {
     setQuantity(quantity - 1)
   }
   const qtyIncrease = () => setQuantity(quantity + 1)
-
-
 
 const addToCart = async () => {
   const medToAdd = {...med, quantity:quantity}
@@ -29,7 +26,6 @@ const addToCart = async () => {
         withCredentials: true 
       }
     );
-    // console.log(JSON.parse(response.config.data));
     console.log(response.config.data);
     return response.config.data;
   } catch (error) {
@@ -37,8 +33,6 @@ const addToCart = async () => {
   }
 };
 
-
-  // console.log(med);
   return (
     <div className='p-10'>
       <div className="relative h-80 w-100 bg-center">
@@ -55,7 +49,6 @@ const addToCart = async () => {
       </div>
       <div className='flex flex-row justify-end pt-6'><button variant='outlined' onClick={addToCart} className='text-sm uppercase border border-inherit px-3 py-1 rounded-sm hover:outline-1 hover:bg-[#333C45] cursor-pointer'>add to Cart</button></div>
       </div>
-    
   )
 }
 
