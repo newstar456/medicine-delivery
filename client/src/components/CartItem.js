@@ -1,11 +1,19 @@
 'use client';
-import React, {useState}  from 'react'
+import React, {useState, useEffect, useRef}  from 'react'
 import Image from 'next/image'
 import axios from "axios"
 
 const CartItem = ({item}) => {
 
-  const [quantity, setQuantity] = useState(item.quantity)
+  const [quantity, setQuantity] = useState(item.quantity);
+//   const refSrc = useRef('')
+//   const refName = useRef('')
+
+//     useEffect(() => {
+//         refSrc.current = item['Meds'].img;
+//         refName.current = item['Meds'].name;
+
+//     }, []);
 
   const qtyDecrease = () => {
     if (quantity === 1) return;
@@ -32,10 +40,13 @@ const CartItem = ({item}) => {
     }
 };
 
+// const{img, name} = item['Meds']
+// console.log(img, name);
+
   return (
     <div className='flex flex-row p-10'>
         <div className="relative h-80 w-100 bg-center">
-            {/* <Image src={item['Meds'].img} alt={item['Meds'].name} fill={true} className="rounded-xl" sizes="fill" style={{ objectFit: 'cover' }} /> */}
+            {/* <Image src={refSrc?.current} alt={refName?.current} fill={true} className="rounded-xl" sizes="fill" style={{ objectFit: 'cover' }} /> */}
          </div>
          <div className='flex flex-col justify-evenly items-center pl-20'>
             <div>{item.name}</div>
