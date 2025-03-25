@@ -14,7 +14,8 @@ const initialState = {
 const Cart = () => {
 
   const [data, setData] = useState([]);
-    const [state, formAction] = useActionState(addCustomerAction, initialState);
+  const [total, setTotal] = useState([]);
+  const [state, formAction] = useActionState(addCustomerAction, initialState);
 
   useEffect(() => {
       const fetchData = async () => {
@@ -23,6 +24,17 @@ const Cart = () => {
               .then((response) => {
                   const obj = JSON.parse(response.data)
                 setData(obj);
+                function total(){
+                  let temp = obj.map(function(item){
+                    return item.price*item.quantity
+                  })
+                  let sum = temp.reduce(function(prev, next){
+                    return prev+next
+                  }, 0)
+                  return sum
+                }
+                let totalCart = total();
+                setTotal(totalCart);
                 localStorage.setItem("cart", JSON.stringify(obj));
               });
           } catch (error) {
@@ -65,7 +77,7 @@ const Cart = () => {
         </div>
         <div className="border border-inherit rounded-sm overflow-y-scroll h-lvh ml-100">
           <div className=""> {contentCart}</div>
-          <SubmitButton />
+          <SubmitButton total={total} finalState={state}/>
         </div>
       </form>
   )

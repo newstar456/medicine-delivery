@@ -47,29 +47,28 @@ export async function addCustomerAction(prevState, formData) {
             };
         }
 
-        try {
-            await axios.get("https://medicine-delivery-server.vercel.app/cart")
-              .then((response) => {
-                  const obj = JSON.parse(response.data)
-                    // console.log(obj);
-                    function total(){
-                        let temp = obj.map(function(item){
-                          return item.price*item.quantity
-                        })
-                        let sum = temp.reduce(function(prev, next){
-                          return prev+next
-                        }, 0)
-                        return sum
-                    }
-                    let totalCart = total();
-                    console.log(totalCart); 
-              });
-        } catch (e) {
-            return {
-                errors: error.details,
-                message: 'Database Error: Failed to Add Customer.',
-            };
-        }
+        // try {
+        //     await axios.get("https://medicine-delivery-server.vercel.app/cart")
+        //       .then((response) => {
+        //           const obj = JSON.parse(response.data)
+        //             function total(){
+        //                 let temp = obj.map(function(item){
+        //                   return item.price*item.quantity
+        //                 })
+        //                 let sum = temp.reduce(function(prev, next){
+        //                   return prev+next
+        //                 }, 0)
+        //                 return sum
+        //             }
+        //             let totalCart = total();
+                    
+        //       });
+        // } catch (e) {
+        //     return {
+        //         errors: error.details,
+        //         message: 'Database Error: Failed to Add Customer.',
+        //     };
+        // }
 
 
     }
