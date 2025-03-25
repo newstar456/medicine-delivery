@@ -36,31 +36,31 @@ const Med = ({med}) => {
     }
   };
 
-  const toggleFav = async () => {
-    setFavorite(!favorite);
-    try {
-      const response = await axios.update(
-        "https://medicine-delivery-server.vercel.app", 
-        favorite, 
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          withCredentials: true 
-        }
-      );
-      // console.log(response.config.data);
-      console.log(response.data);
-      return response.config.data;
-    } catch (error) {
-      console.error(error);
-    }
-  };  
+  // const toggleFav = async () => {
+  //   setFavorite(!favorite);
+  //   try {
+  //     const response = await axios.update(
+  //       "https://medicine-delivery-server.vercel.app", 
+  //       favorite, 
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         },
+  //         withCredentials: true 
+  //       }
+  //     );
+  //     // console.log(response.config.data);
+  //     console.log(response.data);
+  //     return response.config.data;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };  
 
 
   return (
     <div className='p-10 relative'>
-      <div className='absolute top-15 left-15 z-10' onClick={toggleFav}>{favorite ? <StarSolid /> : <StarEmpty />}</div>
+      {/* <div className='absolute top-15 left-15 z-10' onClick={toggleFav}>{favorite ? <StarSolid /> : <StarEmpty />}</div> */}
       <div className="relative h-80 w-100 bg-center">
         <Image src={med.img} alt={med.name} fill={true} className="rounded-xl" sizes="fill" style={{ objectFit: 'cover' }} />
       </div>
