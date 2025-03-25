@@ -51,7 +51,7 @@ const Med = ({med}) => {
         }
       );
       // console.log(response.config.data);
-      console.log(response.data);
+      // console.log(response.data);
       return response.config.data;
     } catch (error) {
       console.error(error);

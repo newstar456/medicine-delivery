@@ -10,7 +10,6 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [chosenShop, setChosenShop] = useState('default');
   const [sortedList, setSortedList] = useState(false)
-  // const [selectedShop, setSelectedShop] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +25,6 @@ const Home = () => {
     };
     fetchData();
   }, []);
-  // console.log(data);
 
   const medsFav = data.filter(med => med.favorite === true)
   const medsNonFav = data.filter(med => med.favorite === false)
@@ -48,7 +46,6 @@ const Home = () => {
   const medsChosenNonFav = medsChosen.filter(med => med.favorite === false) 
   const medsChosenFavSorted = medsChosenFav.sort(comparePrices)
   const medsChosenNonFavSorted = medsChosenNonFav.sort(comparePrices)
-  // console.log(medsChosenFavSorted, medsChosenNonFavSorted);
 
   const sortedAllMeds = useMemo(() => {
     const copiedFavSortedMeds = medsFavSorted.slice()
@@ -74,34 +71,16 @@ const Home = () => {
     contentMeds = sortedMedsChosen.map(med => <Med med={med} key={med.id}/>);
   }
 
-
-  // const medsChosen = useMemo(() => {
-  //   let medsChosenList = []
-  //   for(let i =0; i < data.length; i++){
-  //     if(data[i]['Shops'].title=== chosenShop){
-  //       medsChosenList.push(data[i])
-  //     }
-  //   }
-  //   return medsChosenList
-  // }, [data, chosenShop])
-
   const chooseShop = (e) => { setChosenShop(e.target.dataset.name) }
   const sortByPrice = () => { setSortedList(true) }
   const resetSorting = () => { setSortedList(false) }
   const selectAllShops = () => { setChosenShop('default') }
 
-  // if(chosenShop){
-  //   contentMeds = medsChosen.map(med => <Med med={med} key={med.id}/>)
-  // } else {
-  //   contentMeds = data.map(med => <Med med={med} key={med.id}/>)
-  // }
-
-   let contentShops = data.map(med => med['Shops'].title)
-   let constentShopsModified = new Set(contentShops);
-   let newContentShops = [...constentShopsModified];
-   let contentShopsFinal = newContentShops.map(shop => <button className='cursor-pointer uppercase border border-inherit px-4 py-2 rounded-sm mb-4 hover:outline-1 hover:bg-[#333C45]' key={shop} data-name={shop} onClick={chooseShop}>{shop}</button>)
+  let contentShops = data.map(med => med['Shops'].title)
+  let constentShopsModified = new Set(contentShops);
+  let newContentShops = [...constentShopsModified];
+  let contentShopsFinal = newContentShops.map(shop => <button className='cursor-pointer uppercase border border-inherit px-4 py-2 rounded-sm mb-4 hover:outline-1 hover:bg-[#333C45]' key={shop} data-name={shop} onClick={chooseShop}>{shop}</button>)
   
-
   return (
     <div>
       <div className="flex flex-row pt-[125px] justify-center gap-20">
