@@ -51,7 +51,18 @@ export async function addCustomerAction(prevState, formData) {
             await axios.get("https://medicine-delivery-server.vercel.app/cart")
               .then((response) => {
                   const obj = JSON.parse(response.data)
-                    console.log(obj);
+                    // console.log(obj);
+                    function total(){
+                        let temp = obj.map(function(item){
+                          return item.price*item.quantity
+                        })
+                        let sum = temp.reduce(function(prev, next){
+                          return prev+next
+                        }, 0)
+                        return sum
+                    }
+                    let totalCart = total();
+                    console.log(totalCart); 
               });
         } catch (e) {
             return {
