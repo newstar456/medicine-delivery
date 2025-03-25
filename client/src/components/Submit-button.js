@@ -1,7 +1,15 @@
+'use client';
+import React, { useState, useEffect} from "react"
 import { useFormStatus } from 'react-dom';
 
 function SubmitButton({total, finalState}) {
   const { pending } = useFormStatus();
+
+
+  //   useEffect(() => {
+  //     createOrder();
+
+  // }, [finalState, createOrder]);
 
     const createOrder = () => { console.log(finalState); }
 

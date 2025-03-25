@@ -82,9 +82,10 @@ app.delete('/cart', async (req, res) => {
 app.post('/cart', async (req, res) => {
   const {data, error} = await supabase.from('Customers').select();
   const newCustomerId = Number(data.length + 1);
-  const {name, email, phone, address} = req.body;
+  const {name, email, phone, address, totalCost} = req.body;
   try {
     await supabase.from('Customers').insert({'id': `${newCustomerId}`, 'name': `${name}`, 'adress':`${address}`, 'email':`${email}`, 'phone':`${phone}`});
+    await supabase.from('Orders').insert({'id': `${newCustomerId}`, 'customerName': `${name}`, 'customerAdress':`${address}`, 'customerEmail':`${email}`, 'customerPhone':`${phone}`, 'totalCost':`${totalCost}`});
     res.status(200).json(JSON.stringify({data:data,newCustomerId:newCustomerId }, null, 2));
   } catch (error) {
     // console.error('Unable to connect to the database:', error);
