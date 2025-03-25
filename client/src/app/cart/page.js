@@ -15,13 +15,14 @@ const Cart = () => {
               .then((response) => {
                   const obj = JSON.parse(response.data)
                 setData(obj);
+                localStorage.setItem("cart", JSON.stringify(data));
               });
           } catch (error) {
             console.error(error);
           }
       };
       fetchData();
-      localStorage.setItem("cart", JSON.stringify(data));
+      
   }, []);
 
   
