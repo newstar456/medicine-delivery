@@ -42,7 +42,7 @@ const Med = ({med}) => {
     try {
       const response = await axios.patch(
         "https://medicine-delivery-server.vercel.app", 
-        {favorite: favorite}, 
+        {favorite: !favorite, id: med.id}, 
         {
           headers: {
             'Content-Type': 'application/json'
