@@ -35,7 +35,7 @@ const CartItem = ({item}) => {
   return (
     <div className='flex flex-row p-10'>
         <div className="relative h-80 w-100 bg-center">
-            {/* <Image src={item['Meds'].img} alt={item['Meds'].name} fill={true} className="rounded-xl" sizes="fill" style={{ objectFit: 'cover' }} /> */}
+            <Image src={item['Meds'].img} alt={item['Meds'].name} fill={true} className="rounded-xl" sizes="fill" style={{ objectFit: 'cover' }} />
          </div>
          <div className='flex flex-col justify-evenly items-center pl-20'>
             <div>{item.name}</div>
