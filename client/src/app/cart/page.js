@@ -47,9 +47,9 @@ const Cart = () => {
   const contentCart = data.map(item => <CartItem item={item} key={item.id}/>)
 
   return (
+    <div className="flex flex-row gap-8 pt-[125px] p-10 justify-evenly" >
 
-      <form className="flex flex-row gap-8 pt-[125px] p-10" action={formAction}>
-        <div className="p-10 border border-inherit rounded-sm fixed w-1/3">
+      <form className="min-w-[450px]" action={formAction}>
           <div className="mb-6">
             <label htmlFor="name" className="block mb-2">
               Name
@@ -74,12 +74,13 @@ const Cart = () => {
             </label>
             <textarea id="address" name="address" className="border border-inherit rounded-sm w-full"></textarea>
           </div>
-        </div>
-        <div className="border border-inherit rounded-sm overflow-y-scroll h-lvh ml-100">
-          <div className=""> {contentCart}</div>
+          
           <SubmitButton total={total} finalState={state}/>
-        </div>
       </form>
+
+      <div className=" overflow-y-scroll h-[100vh]"> {contentCart}</div>
+    </div>
+
   )
 }
 

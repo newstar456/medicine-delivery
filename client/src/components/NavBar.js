@@ -1,11 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-// import { useRouter } from 'next/router'
-import {LinkedInIcon, TwitterIcon, GithubIcon, DribbbleIcon, PinterestIcon} from './Icons'
-import { motion } from 'framer-motion'
+
 
 const CustomLink = ({href, title, className=""}) => {
-  // const router = useRouter();
+
   return(
     <Link href={href} className={`${className} relative group`}>
       {title}

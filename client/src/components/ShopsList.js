@@ -1,12 +1,3 @@
-// import React, {useEffect, useState} from 'react'
-// import {Box, Typography, Stack} from '@mui/material'
-// import { useTheme } from '@mui/material/styles'
-// import styled from "styled-components"
-
-
-
-
-
 const ShopsList = ({contentShops}) => {
   
   return(

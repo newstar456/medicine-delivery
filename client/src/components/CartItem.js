@@ -1,5 +1,5 @@
 'use client';
-import React, {useState, useEffect, useRef}  from 'react'
+import React, {useState}  from 'react'
 import Image from 'next/image'
 import axios from "axios"
 
@@ -25,7 +25,6 @@ const CartItem = ({item}) => {
           withCredentials: true 
         }
       );
-      console.log(response.data);
       return response.config.data;
     } catch (error) {
       console.error(error);
@@ -33,7 +32,7 @@ const CartItem = ({item}) => {
 };
 
   return (
-    <div className='flex flex-row p-10'>
+    <div className='flex flex-row p-8'>
         <div className="relative h-80 w-100 bg-center">
             <Image src={item.img} alt={item.name} className="rounded-xl" width={300} height={200} style={{ objectFit: 'cover' }} />
          </div>
