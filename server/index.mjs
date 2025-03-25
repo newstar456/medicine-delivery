@@ -82,12 +82,12 @@ app.delete('/cart', async (req, res) => {
 app.post('/cart', async (req, res) => {
   const {data, error} = await supabase.from('Customers').select();
   const newCustomerId = data.length + 1;
-  const {name, email, phone, address} = req.body;
+  // const {name, email, phone, address} = req.body;
   try {
-    await supabase.from('Customers').insert({'id': `${Number(newCustomerId)}`, 'name': `${name}`, 'adress':`${address}`, 'email':`${email}`, 'phone':`${phone}`});
-    res.status(200).json(JSON.stringify({newCustomerId:newCustomerId}, null, 2));
+    // await supabase.from('Customers').insert({'id': `${Number(newCustomerId)}`, 'name': `${name}`, 'adress':`${address}`, 'email':`${email}`, 'phone':`${phone}`});
+    res.status(200).json(JSON.stringify({data:data,newCustomerId:newCustomerId }, null, 2));
   } catch (error) {
-    console.error('Unable to connect to the database:', error);
+    // console.error('Unable to connect to the database:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
