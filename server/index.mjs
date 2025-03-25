@@ -42,7 +42,7 @@ app.post('/', async (req, res) => {
     } else {
       res.status(200).json(JSON.stringify({1: 'item doesnt exist'}, null, 2));
       const idInCart = `${Number(new Date().getTime())}`
-      await supabase.from('Carts').insert({'id': `${idInCart}`, 'name': `${req.body.name}`, 'shop':`${req.body.shop_id}`, 'quantity':`${req.body.quantity}`, 'price':`${req.body.price}`, 'med_id':`${req.body.id}`});
+      await supabase.from('Carts').insert({'id': `${idInCart}`, 'name': `${req.body.name}`, 'shop':`${req.body.shop_id}`, 'quantity':`${req.body.quantity}`, 'price':`${req.body.price}`, 'med_id':`${req.body.id}`, 'img':`${req.body.img}`});
     }
   } catch (error) {
     console.error('Unable to connect to the database:', error);
