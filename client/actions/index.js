@@ -28,7 +28,6 @@ export async function addCustomerAction(prevState, formData) {
         };
     } else {
       const { name, email, phone, address } =  value;
-      console.log(name, email, phone, address);
 
         try {
             const response = await axios.post(
@@ -41,19 +40,27 @@ export async function addCustomerAction(prevState, formData) {
                 withCredentials: true 
               }
             );
-                // console.log(response.config.data);
-                console.log(response.data);
-            return {
-                message: { name:name, email:email, phone:phone, address:address },
-            };
-
-
         } catch (e) {
             return {
                 errors: error.details,
                 message: 'Database Error: Failed to Add Customer.',
             };
         }
+
+        try {
+            await axios.get("https://medicine-delivery-server.vercel.app/cart")
+              .then((response) => {
+                  const obj = JSON.parse(response.data)
+                    console.log(obj);
+              });
+        } catch (e) {
+            return {
+                errors: error.details,
+                message: 'Database Error: Failed to Add Customer.',
+            };
+        }
+
+
     }
 
   revalidatePath('/');
