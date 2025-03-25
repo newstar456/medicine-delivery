@@ -84,7 +84,7 @@ app.post('/cart', async (req, res) => {
   const newCustomerId = data.length + 1;
   const {name, email, phone, address} = req.body;
   try {
-    await supabase.from('Customers').insert({'id': `${newCustomerId}`, 'name': `${name}`, 'address':`${address}`, 'email':`${email}`, 'phone':`${phone}`});
+    await supabase.from('Customers').insert({'id': `${100}`, 'name': `${'hvbhgvb'}`, 'address':`${'hbjhbjh'}`, 'email':`${'ubujhb'}`, 'phone':`${65416541}`});
     res.status(200).json(JSON.stringify({newCustomerId:newCustomerId}, null, 2));
   } catch (error) {
     console.error('Unable to connect to the database:', error);
