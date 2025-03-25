@@ -36,26 +36,26 @@ const Med = ({med}) => {
     }
   };
 
-  // const toggleFav = async () => {
-  //   setFavorite(!favorite);
-  //   try {
-  //     const response = await axios.update(
-  //       "https://medicine-delivery-server.vercel.app", 
-  //       favorite, 
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json'
-  //         },
-  //         withCredentials: true 
-  //       }
-  //     );
-  //     // console.log(response.config.data);
-  //     console.log(response.data);
-  //     return response.config.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };  
+  const toggleFav = async () => {
+    setFavorite(!favorite);
+    try {
+      const response = await axios.patch(
+        "https://medicine-delivery-server.vercel.app", 
+        favorite, 
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          withCredentials: true 
+        }
+      );
+      // console.log(response.config.data);
+      console.log(response.data);
+      return response.config.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };  
 
 
   return (

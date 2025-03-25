@@ -49,9 +49,9 @@ app.post('/', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-// app.update('/', async (req, res) => {
-//   try {
-    // res.status(200).json(JSON.stringify({1: 'update'}, null, 2));
+app.patch('/', async (req, res) => {
+  try {
+    res.status(200).json(JSON.stringify({1: 'patch'}, null, 2));
     // const {data, error} = await supabase.from('Carts').select();
     // const itemExists = await data.find((item) => item.name === req.body.name&&item.shop===req.body.shop_id);
     // if(itemExists) {
@@ -63,11 +63,11 @@ app.post('/', async (req, res) => {
     //   const idInCart = `${Number(new Date().getTime())}`
     //   await supabase.from('Carts').insert({'id': `${idInCart}`, 'name': `${req.body.name}`, 'shop':`${req.body.shop_id}`, 'quantity':`${req.body.quantity}`, 'price':`${req.body.price}`, 'med_id':`${req.body.id}`, 'img':`${req.body.img}`});
     // }
-//   } catch (error) {
-//     console.error('Unable to connect to the database:', error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 
 app.get('/cart', async (req, res) => {
