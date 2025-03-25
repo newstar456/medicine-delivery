@@ -82,7 +82,7 @@ app.post('/cart', async (req, res) => {
   const {name, email, phone, address, totalCost} = req.body;
   try {
     await supabase.from('Customers').insert({'id': `${newCustomerId}`, 'name': `${name}`, 'adress':`${address}`, 'email':`${email}`, 'phone':`${phone}`});
-    await supabase.from('Orders').insert({'id': `${100}`, 'customerName': `${name}`, 'customerAdress':`${address}`, 'customerEmail':`${email}`, 'customerPhone':`${phone}`, 'totalCost':`${totalCost}`});
+    await supabase.from('Orders').insert({'id': `${newCustomerId}`, 'customerName': `${name}`, 'customerAdress':`${address}`, 'customerEmail':`${email}`, 'customerPhone':`${phone}`, 'totalCost':`${totalCost}`});
     res.status(200).json(JSON.stringify({data:data,newCustomerId:newCustomerId }, null, 2));
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
