@@ -15,7 +15,7 @@ const Cart = () => {
               .then((response) => {
                   const obj = JSON.parse(response.data)
                 setData(obj);
-                localStorage.setItem("cart", JSON.stringify(data));
+                localStorage.setItem("cart", JSON.stringify(obj));
               });
           } catch (error) {
             console.error(error);
