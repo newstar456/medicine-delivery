@@ -38,11 +38,11 @@ const Med = ({med}) => {
 
   const toggleFav = async () => {
     setFavorite(!favorite);
-    const newFav = Number(favorite);
+    // const newFav = Number(favorite);
     try {
       const response = await axios.patch(
         "https://medicine-delivery-server.vercel.app", 
-        newFav, 
+        {favorite: favorite}, 
         {
           headers: {
             'Content-Type': 'application/json'
