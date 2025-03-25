@@ -85,7 +85,7 @@ app.post('/cart', async (req, res) => {
   const {name, email, phone, address} = req.body;
   try {
     await supabase.from('Customers').insert({'id': `${newCustomerId}`, 'name': `${name}`, 'address':`${address}`, 'email':`${email}`, 'phone':`${phone}`});
-    res.status(200).json(JSON.stringify({newobj:newobj}, null, 2));
+    res.status(200).json(JSON.stringify({newCustomerId:newCustomerId}, null, 2));
   } catch (error) {
     console.error('Unable to connect to the database:', error);
     res.status(500).json({ error: 'Internal Server Error' });
