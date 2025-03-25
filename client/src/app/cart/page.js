@@ -75,7 +75,7 @@ const Cart = () => {
             <textarea id="address" name="address" className="border border-inherit rounded-sm w-full"></textarea>
           </div>
           
-          <SubmitButton total={total} finalState={state}/>
+          <SubmitButton total={total} />
       </form>
 
       <div className=" overflow-y-scroll h-[100vh]"> {contentCart}</div>
