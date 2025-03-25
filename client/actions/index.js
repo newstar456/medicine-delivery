@@ -25,11 +25,12 @@ export async function addCustomerAction(prevState, formData) {
       console.error("Validation Error:", error.details);
     } else {
       const { name, email, phone, address } =  value;
+      console.log(name, email, phone, address);
 
         try {
             const response = await axios.post(
               "https://medicine-delivery-server.vercel.app/cart", 
-              value, 
+              { name:name, email:email, phone:phone, address:address }, 
               {
                 headers: {
                   'Content-Type': 'application/json'
@@ -40,13 +41,6 @@ export async function addCustomerAction(prevState, formData) {
                 // console.log(response.config.data);
                 console.log(response.data);
                 return response.config.data;
-
-
-
-
-
-
-
 
 
         } catch (e) {
