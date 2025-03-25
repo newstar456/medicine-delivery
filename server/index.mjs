@@ -59,7 +59,7 @@ app.get('/cart', async (req, res) => {
   }
 });
 
-app.post('/cart', async (req, res) => {
+app.delete('/cart', async (req, res) => {
   try {
     await supabase.from('Carts').delete().eq('id', req.body.id);
     res.status(200).json(JSON.stringify({1:'item removed'}, null, 2));
