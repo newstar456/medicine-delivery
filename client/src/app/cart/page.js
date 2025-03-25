@@ -34,7 +34,7 @@ const Cart = () => {
 
   const contentCart = data.map(item => <CartItem item={item} key={item.id}/>)
 
-  console.log(state);
+  // console.log(state);
 
   return (
 
@@ -90,14 +90,6 @@ const Cart = () => {
           <SubmitButton />
         </div>
       </form>
-
-
-
-///shv - ; h-screen?; h-min-; h-lvh-
-   
-    
-    
-
   )
 }
 

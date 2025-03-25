@@ -43,7 +43,9 @@ export async function addCustomerAction(prevState, formData) {
             );
                 // console.log(response.config.data);
                 console.log(response.data);
-                return response.config.data;
+            return {
+                message: { name:name, email:email, phone:phone, address:address },
+            };
 
 
         } catch (e) {
