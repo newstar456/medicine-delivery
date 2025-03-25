@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors({
   origin: ["http://localhost:3000", 'https://medicine-delivery-client.vercel.app'], 
-  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
+  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE', 'UPDATE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true 
 }));
