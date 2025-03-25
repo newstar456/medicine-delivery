@@ -38,10 +38,11 @@ const Med = ({med}) => {
 
   const toggleFav = async () => {
     setFavorite(!favorite);
+    const newFav = Number(favorite);
     try {
       const response = await axios.patch(
         "https://medicine-delivery-server.vercel.app", 
-        favorite, 
+        newFav, 
         {
           headers: {
             'Content-Type': 'application/json'
@@ -60,7 +61,7 @@ const Med = ({med}) => {
 
   return (
     <div className='p-10 relative'>
-      {/* <div className='absolute top-15 left-15 z-10' onClick={toggleFav}>{favorite ? <StarSolid /> : <StarEmpty />}</div> */}
+      <div className='absolute top-15 left-15 z-10' onClick={toggleFav}>{favorite ? <StarSolid /> : <StarEmpty />}</div>
       <div className="relative h-80 w-100 bg-center">
         <Image src={med.img} alt={med.name} fill={true} className="rounded-xl" sizes="fill" style={{ objectFit: 'cover' }} />
       </div>
