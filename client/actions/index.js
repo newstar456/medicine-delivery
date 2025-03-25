@@ -22,7 +22,10 @@ export async function addCustomerAction(prevState, formData) {
     });
 
     if (error) {
-      console.error("Validation Error:", error.details);
+        return {
+            errors: error.details,
+            message: 'Database Error: Failed to Validate input data.',
+        };
     } else {
       const { name, email, phone, address } =  value;
       console.log(name, email, phone, address);
@@ -45,7 +48,7 @@ export async function addCustomerAction(prevState, formData) {
 
         } catch (e) {
             return {
-                type: 'error',
+                errors: error.details,
                 message: 'Database Error: Failed to Add Customer.',
             };
         }

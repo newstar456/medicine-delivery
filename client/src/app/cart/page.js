@@ -43,45 +43,44 @@ const Cart = () => {
               Name
             </label>
             <input type="text" id="name" name="name" className="border border-inherit rounded-sm w-full"/>
-            {/* {state?.errors?.name && (
+            {state?.errors?.name && (
               <span id="name-error" className="text-red-600 text-sm">
                 {state.errors.name.join(',')}
               </span>
-            )} */}
+            )}
           </div>
           <div className="mb-6">
             <label htmlFor="email" className="block mb-2">
               Email
             </label>
-            {/* <textarea id="email" name="email" className="border border-inherit rounded-sm w-full"></textarea> */}
             <input type="email" id="email" name="email" className="border border-inherit rounded-sm w-full"/>
-            {/* {state?.errors?.email && (
+            {state?.errors?.email && (
               <span id="email-error" className="text-red-600 text-sm">
                 {state.errors.email.join(',')}
               </span>
-            )} */}
+            )}
           </div>
           <div className="mb-6">
             <label htmlFor="phone" className="block mb-2">
               Phone
             </label>
             <input type="number" id="phone" name="phone" className="border border-inherit rounded-sm w-full"/>
-            {/* {state?.errors?.phone && (
+            {state?.errors?.phone && (
               <span id="phone-error" className="text-red-600 text-sm">
                 {state.errors.phone.join(',')}
               </span>
-            )} */}
+            )}
           </div>
           <div className="mb-6">
             <label htmlFor="address" className="block mb-2">
               Address
             </label>
             <textarea id="address" name="address" className="border border-inherit rounded-sm w-full"></textarea>
-            {/* {state?.errors?.address && (
+            {state?.errors?.address && (
               <span id="address-error" className="text-red-600 text-sm">
                 {state.errors.address.join(',')}
               </span>
-            )} */}
+            )}
           </div>
         </div>
         <div className="border border-inherit rounded-sm overflow-y-scroll h-lvh ml-100">
