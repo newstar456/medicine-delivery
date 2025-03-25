@@ -23,7 +23,8 @@ const Cart = () => {
       fetchData();
   }, []);
 
-  console.log(data);
+  localStorage.setItem("cart", JSON.stringify(data));
+  // console.log(data);
 
   const contentCart = data.map(item => <CartItem item={item} key={item.id}/>)
 

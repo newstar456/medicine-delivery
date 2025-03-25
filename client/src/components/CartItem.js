@@ -6,14 +6,6 @@ import axios from "axios"
 const CartItem = ({item}) => {
 
   const [quantity, setQuantity] = useState(item.quantity);
-//   const refSrc = useRef('')
-//   const refName = useRef('')
-
-//     useEffect(() => {
-//         refSrc.current = item['Meds'].img;
-//         refName.current = item['Meds'].name;
-
-//     }, []);
 
   const qtyDecrease = () => {
     if (quantity === 1) return;
@@ -56,7 +48,7 @@ const CartItem = ({item}) => {
               <div className='font-bold'>{quantity}</div>
               <div onClick={qtyIncrease} className='w-6 text-right cursor-pointer hover:font-bold'>{'>'}</div>
             </div>
-            <button variant='outlined' onClick={removeFromCart} className='text-sm uppercase border border-inherit px-3 py-1 rounded-sm hover:outline-1 hover:bg-[#333C45] cursor-pointer'>Remove</button>
+            <button onClick={removeFromCart} className='text-sm uppercase border border-inherit px-3 py-1 rounded-sm hover:outline-1 hover:bg-[#333C45] cursor-pointer'>Remove</button>
         </div>
     </div>
   )

@@ -9,6 +9,7 @@ const Med = ({med}) => {
   let startingQty = 1;
   const [quantity, setQuantity] = useState(startingQty);
   const [favorite, setFavorite] = useState(med.favorite)
+  
   const qtyDecrease = () => {
     if (quantity === 1) return;
     setQuantity(quantity - 1)
@@ -38,7 +39,6 @@ const Med = ({med}) => {
 
   const toggleFav = async () => {
     setFavorite(!favorite);
-    // const newFav = Number(favorite);
     try {
       const response = await axios.patch(
         "https://medicine-delivery-server.vercel.app", 
