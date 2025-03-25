@@ -34,6 +34,8 @@ const Cart = () => {
 
   const contentCart = data.map(item => <CartItem item={item} key={item.id}/>)
 
+  console.log(state);
+
   return (
 
       <form className="flex flex-row gap-8 pt-[125px] p-10" action={formAction}>
